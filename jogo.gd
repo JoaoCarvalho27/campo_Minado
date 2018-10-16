@@ -3,16 +3,13 @@ extends PanelContainer
 var TamanhoTabuleiro = Vector2(10,10)
 var numeroMinas = 15
 var blocos_carregados = 0
-var Tempo = 0
 
 func _ready():
-	
-	get_node('inicio/info/tempo/tempo').set_text(str(Tempo))
 	get_node('inicio/info/countMinas/valor').set_text(str(numeroMinas))
 	get_node("inicio/info/novo")
 	
 	
-
+#gera o tabuleiro com os inputs dados pelo jogador
 func novo_jogo(Altura,Largura,Minas):
 	TamanhoTabuleiro= Vector2(Largura,Altura)
 	numeroMinas=Minas
@@ -22,15 +19,17 @@ func novo_jogo(Altura,Largura,Minas):
 			var bloco= preload("res://tabuleiro.tscn")
 			bloco.set_meta('pos',Vector2(x,y))
 			
+			
+#vai distribuir as minas ao longo do tabuleiro de forma randomica
 func distribuir_minas(M):
-	prints("Minas:",M)
+	#diferentes tipos de minas 
 	var M1
 	var M2
 	var M3
 	var minepos1
 	var minepos2
 	var minepos3
-	
+	#distribuicao do numero de minas de cada tipo consoante o input do jogador
 	if M>=20 and M<30:
 		M1=5
 		M2=5
@@ -69,7 +68,7 @@ func distribuir_minas(M):
 
 
 
-
+#janela onde o jogador vai poder por o seu input
 func _on_Novo_pressed():
 	get_node('Novo Jogo').popup_centered()
 
