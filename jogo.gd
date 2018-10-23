@@ -7,12 +7,15 @@ var blocos_carregados = 0
 func _ready():
 	get_node('inicio/info/countMinas/valor').set_text(str(numeroMinas))
 	get_node("inicio/info/novo")
-	
+	novo_jogo(10,10,10)
 	
 #gera o tabuleiro com os inputs dados pelo jogador
 func novo_jogo(Altura,Largura,Minas):
 	TamanhoTabuleiro= Vector2(Largura,Altura)
 	numeroMinas=Minas
+	TamanhoTabuleiro.x=Largura
+	TamanhoTabuleiro.y=Altura
+	
 	get_node("inicio/tabuleiro").set_columns(TamanhoTabuleiro.x)
 	for y in range(TamanhoTabuleiro.y):
 		for x in range(TamanhoTabuleiro.x):
@@ -64,6 +67,10 @@ func distribuir_minas(M):
 					get_node("inicio/tabuleiro").get_child(minepos3).mine = true
 					M3 -= 1
 
+
+func num_vizinhos(pos):
+	var lista_vizinhos=[]
+	
 
 
 
