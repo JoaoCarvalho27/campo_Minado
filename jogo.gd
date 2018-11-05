@@ -70,10 +70,10 @@ func distribuir_minas(M):
 
 func num_vizinhos(pos):
 	var lista_vizinhos=[]
-	     lista_vizinhos=minepos3 
-         lista_vizionhos
-
-
+	    if lista_vizinhos=minepos3 :
+			if lista_vizinhos<minepos3 :
+				if lista_vizinhos>minepos3 :
+ 
 #tem de avaliar os vizinhos com o sitio das minas  
 
 
