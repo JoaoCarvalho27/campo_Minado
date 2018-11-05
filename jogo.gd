@@ -44,7 +44,7 @@ func distribuir_minas(M):
 	if M>=30:
 		M1=10
 		M2=10
-		M3= M-(M2+M1)
+		M3=M-(M2+M1)
 		
 	while M1>0:
 		minepos1 = randi() % int(TamanhoTabuleiro.x*TamanhoTabuleiro.y)
