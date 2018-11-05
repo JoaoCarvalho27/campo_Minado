@@ -70,12 +70,22 @@ func distribuir_minas(M):
 
 func num_vizinhos(pos):
 	var lista_vizinhos=[]
-	    if lista_vizinhos=minepos3 :
+		if lista_vizinhos = minepos3:
 			if lista_vizinhos<minepos3 :
 				if lista_vizinhos>minepos3 :
  
 #tem de avaliar os vizinhos com o sitio das minas  
+func num_vizinhos (pos):
+	var lista_vizinhos = []
+		if lista_vizinhos = minepos2:
+			if lista_vizinhos > minepos2:
+				if lista_vizinhos < minepos2: 
 
+func num_vizinhos (pos):
+	var lista_vizinhos = [] 
+		if lista_vizinhos = minepos1:
+			if lista_vizinhos > minepos1:
+				if lista_vizinhos < minepos1: 
 
 
 #janela onde o jogador vai poder por o seu input
