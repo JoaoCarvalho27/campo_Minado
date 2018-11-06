@@ -57,52 +57,111 @@ func distribuir_minas(M):
 
 func num_vizinhos(pos):
 	var lista_vizinhos=[]
-	
+
 	if x==1 and y==1:
 		if  (x, y+1)==minepos1 or (x, y+1)==minepos2:
 			lista_vizinhos.append(x, y+1)
+			
 		if (x+1 ,y)==minepos1 or (x+1 , y)==minepos2:
 			lista_vizinhos.append(x+1, y)
+			
 		if (x+1 ,y+1)==minepos1 or (x+1 , y+1)==minepos2:
 			lista_vizinhos.append(x+1, y+1)
+
 	else if x==largura and y==1:
 		if (x ,y+1)==minepos1 or (x , y+1)==minepos2:
 			lista_vizinhos.append(x, y+1)
+			
 		if (x-1 ,y)==minepos1 or (x-1 , y)==minepos2:
 			lista_vizinhos.append(x-1, y)
+			
 		if (x-1 ,y+1)==minepos1 or (x-1 , y+1)==minepos2:
 			lista_vizinhos.append(x-1, y+1)
-	
-	
+
 	else if x==largura and y==altura:
-	
-	
+		if (x ,y-1)==minepos1 or (x , y-1)==minepos2:
+			lista_vizinhos.append(x, y-1)
+			
+		if (x-1 ,y)==minepos1 or (x-1 , y)==minepos2:
+			lista_vizinhos.append(x-1, y)
+			
+		if (x-1 ,y-1)==minepos1 or (x-1 , y-1)==minepos2:
+			lista_vizinhos.append(x-1, y-1)
+
 	else if x==1 and y==altura:
-	
-	
+		if (x ,y-1)==minepos1 or (x , y-1)==minepos2:
+			lista_vizinhos.append(x, y-1)
+			
+		if (x+1 ,y)==minepos1 or (x+1 , y)==minepos2:
+			lista_vizinhos.append(x+1, y)
+			
+		if (x+1 ,y-1)==minepos1 or (x+1 , y-1)==minepos2:
+			lista_vizinhos.append(x+1, y-1)
+
 	else if x==1 and 2=<y<=altura-1:
 		if  (x ,y+1)==minepos1 or (x , y+1)==minepos2:
 			lista_vizinhos.append(x, y+1)
 			
 		if (x+1 ,y+1)==minepos1 or (x+1 , y+1)==minepos2:
 			lista_vizinhos.append(x+1, y+1)
-		
+			
 		if (x+1 ,y)==minepos1 or (x+1 , y)==minepos2:
 			lista_vizinhos.append(x+1, y)
 			
-
 		if (x+1 ,y-1)==minepos1 or (x+1 , y-1)==minepos2:
 			lista_vizinhos.append(x+1, y-1)
 			
-		
 		if (x ,y-1)==minepos1 or (x , y-1)==minepos2:
 			lista_vizinhos.append(x, y-1)
 
-	
 	else if 2=<x<=largura-1 and y==1:
-	else if x==largura and 2=<y<=altura-1:
-	else if 2=<x<=largura-1 and y==altura:
+		if  (x ,y+1)==minepos1 or (x , y+1)==minepos2:
+			lista_vizinhos.append(x, y+1)
 			
+		if (x+1 ,y+1)==minepos1 or (x+1 , y+1)==minepos2:
+			lista_vizinhos.append(x+1, y+1)
+			
+		if (x+1 ,y)==minepos1 or (x+1 , y)==minepos2:
+			lista_vizinhos.append(x+1, y)
+			
+		if (x-1 ,y)==minepos1 or (x-1 , y)==minepos2:
+			lista_vizinhos.append(x-1, y)
+			
+		if (x-1,y+1)==minepos1 or (x-1, y+1)==minepos2:
+			lista_vizinhos.append(x-1, y+1)
+
+	else if x==largura and 2=<y<=altura-1:
+		if  (x ,y+1)==minepos1 or (x , y+1)==minepos2:
+			lista_vizinhos.append(x, y+1)
+			
+		if (x-1 ,y+1)==minepos1 or (x-1 , y+1)==minepos2:
+			lista_vizinhos.append(x-1, y+1)
+			
+		if (x-1 ,y)==minepos1 or (x-1 , y)==minepos2:
+			lista_vizinhos.append(x-1, y)
+			
+		if (x-1 ,y-1)==minepos1 or (x-1 , y-1)==minepos2:
+			lista_vizinhos.append(x-1, y-1)
+			
+		if (x,y-1)==minepos1 or (x, y-1)==minepos2:
+			lista_vizinhos.append(x, y-1)
+
+	else if 2=<x<=largura-1 and y==altura:
+		if  (x-1 ,y)==minepos1 or (x-1, y)==minepos2:
+			lista_vizinhos.append(x-1, y)
+			
+		if (x-1 ,y-1)==minepos1 or (x-1 , y-1)==minepos2:
+			lista_vizinhos.append(x-1, y-1)
+			
+		if (x ,y-1)==minepos1 or (x, y-1)==minepos2:
+			lista_vizinhos.append(x, y-1)
+			
+		if (x+1 ,y-1)==minepos1 or (x+1 , y-1)==minepos2:
+			lista_vizinhos.append(x+1, y-1)
+			
+		if (x+1,y)==minepos1 or (x+1, y)==minepos2:
+			lista_vizinhos.append(x+1, y)
+
 	else 
 		if x+1== minepos1 or x+1== minepos2:
 		lista_vizinhos.append(x+1,y)	
