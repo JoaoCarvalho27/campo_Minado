@@ -28,23 +28,18 @@ func distribuir_minas(M):
 	#diferentes tipos de minas 
 	var M1
 	var M2
-	var M3
 	var minepos1
 	var minepos2
-	var minepos3
 	#distribuicao do numero de minas de cada tipo consoante o input do jogador
 	if M>=20 and M<30:
 		M1=5
-		M2=5
-		M3=M-(M2+M1)
+		M2=M-M1
 	if M>=10 and M<20:
 		M1=3
-		M2=3
-		M3= M-(M2+M1)
+		M2=M-M1
 	if M>=30:
 		M1=10
-		M2=10
-		M3=M-(M2+M1)
+		M2=M-M1
 		
 	while M1>0:
 		minepos1 = randi() % int(TamanhoTabuleiro.x*TamanhoTabuleiro.y)
@@ -58,36 +53,63 @@ func distribuir_minas(M):
 			if not get_node("inicio/tabuleiro").get_child(minepos1).mine:
 				get_node("inicio/tabuleiro").get_child(minepos2).mine = true
 				M2 -= 1
-	
-	while M3>0:
-		minepos3 = randi() % int(TamanhoTabuleiro.x*TamanhoTabuleiro.y)
-		if not get_node("inicio/tabuleiro").get_child(minepos3).mine:
-			if not get_node("inicio/tabuleiro").get_child(minepos2).mine:
-				if not get_node("inicio/tabuleiro").get_child(minepos1).mine:
-					get_node("inicio/tabuleiro").get_child(minepos3).mine = true
-					M3 -= 1
 
 
 func num_vizinhos(pos):
 	var lista_vizinhos=[]
-		if lista_vizinhos = minepos3:
-			if lista_vizinhos<minepos3 :
-				if lista_vizinhos>minepos3 :
- 
-#tem de avaliar os vizinhos com o sitio das minas  
-func num_vizinhos (pos):
-	var lista_vizinhos = []
-		if lista_vizinhos = minepos2:
-			if lista_vizinhos > minepos2:
-				if lista_vizinhos < minepos2: 
+	
+	if x==1 and y==1:
+		if  (x, y+1)==minepos1 or (x, y+1)==minepos2:
+			lista_vizinhos.append(x, y+1)
+		if (x+1 ,y)==minepos1 or (x+1 , y)==minepos2:
+			lista_vizinhos.append(x+1, y)
+		if (x+1 ,y+1)==minepos1 or (x+1 , y+1)==minepos2:
+			lista_vizinhos.append(x+1, y+1)
+	else if x==largura and y==1:
+		if (x ,y+1)==minepos1 or (x , y+1)==minepos2:
+			lista_vizinhos.append(x, y+1)
+		if (x-1 ,y)==minepos1 or (x-1 , y)==minepos2:
+			lista_vizinhos.append(x-1, y)
+		if (x-1 ,y+1)==minepos1 or (x-1 , y+1)==minepos2:
+			lista_vizinhos.append(x-1, y+1)
+	
+	
+	else if x==largura and y==altura:
+	
+	
+	else if x==1 and y==altura:
+	
+	
+	else if x==1 and 2=<y<=altura-1:
+		if  (x ,y+1)==minepos1 or (x , y+1)==minepos2:
+			lista_vizinhos.append(x, y+1)
+			
+		if (x+1 ,y+1)==minepos1 or (x+1 , y+1)==minepos2:
+			lista_vizinhos.append(x+1, y+1)
+		
+		if (x+1 ,y)==minepos1 or (x+1 , y)==minepos2:
+			lista_vizinhos.append(x+1, y)
+			
 
-func num_vizinhos (pos):
-	var lista_vizinhos = [] 
-		if lista_vizinhos = minepos1:
-			if lista_vizinhos > minepos1:
-				if lista_vizinhos < minepos1: 
+		if (x+1 ,y-1)==minepos1 or (x+1 , y-1)==minepos2:
+			lista_vizinhos.append(x+1, y-1)
+			
+		
+		if (x ,y-1)==minepos1 or (x , y-1)==minepos2:
+			lista_vizinhos.append(x, y-1)
 
-
+	
+	else if 2=<x<=largura-1 and y==1:
+	else if x==largura and 2=<y<=altura-1:
+	else if 2=<x<=largura-1 and y==altura:
+			
+	else 
+		if x+1== minepos1 or x+1== minepos2:
+		lista_vizinhos.append(x+1,y)	
+		if x-1== minepos1 or x-1== minepos2:
+		lista_vizinhos.append(x-1,y)
+		
+		
 #janela onde o jogador vai poder por o seu input
 func _on_Novo_pressed():
 	get_node('Novo Jogo').popup_centered()
