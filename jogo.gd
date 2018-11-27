@@ -1,6 +1,6 @@
 extends PanelContainer
 
-var TamanhoTabuleiro = Vector2(10,10)
+var TamanhoTabuleiro = Vector2(10,10
 var numeroMinas = 15
 var blocos_carregados = 0
 
