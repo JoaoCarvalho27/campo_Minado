@@ -45,7 +45,7 @@ func num_vizinhos(pos):
 	var lista_vizinhos=[]
 
 	if x==1 and y==1:
-		if  (x, y+1)==minepos1 or (x, y+1)==minepos2:
+		if  (x,y+1)==minepos1 or (x,y+1)==minepos2:
 			lista_vizinhos.append(x, y+1)
 			
 		if (x+1 ,y)==minepos1 or (x+1 , y)==minepos2:
